@@ -13,6 +13,8 @@ export default defineConfig({
         'run-at': 'document-start',
         sandbox: 'DOM',
         grant: 'none',
+        author: 'rxliuli',
+        license: 'GPL-3.0-only',
       },
     }),
   ],

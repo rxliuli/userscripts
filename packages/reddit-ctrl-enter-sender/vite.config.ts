@@ -10,6 +10,8 @@ export default defineConfig({
         namespace: 'https://rxliuli.com',
         description: 'Use Ctrl/Cmd+Enter to quickly send replies, comments, or save edits on Reddit.',
         match: ['https://www.reddit.com/**'],
+        author: 'rxliuli',
+        license: 'GPL-3.0-only',
       },
     }),
   ],
