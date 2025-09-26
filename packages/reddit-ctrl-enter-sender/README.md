@@ -13,7 +13,7 @@ A userscript that enables quick submission of replies, comments, or edits on Red
 ## Installation
 
 1. Install a userscript manager like [Tampermonkey](https://www.tampermonkey.net/) or [Greasemonkey](https://www.greasespot.net/)
-2. Download the userscript from <https://github.com/rxliuli/userscripts/releases/latest>
+2. Download the userscript from <https://github.com/rxliuli/userscripts/releases/latest/download/reddit-ctrl-enter-sender.user.js>
 
 ## How to Use
 

@@ -9,7 +9,7 @@ This userscript intercepts browser APIs that YouTube uses to detect if you're ac
 ## Installation
 
 1. Install a userscript manager like [Tampermonkey](https://www.tampermonkey.net/) or [Greasemonkey](https://www.greasespot.net/)
-2. Download the userscript from <https://github.com/rxliuli/userscripts/releases/latest>
+2. Download the userscript from <https://github.com/rxliuli/userscripts/releases/latest/download/youtube-music-background-play.user.js>
 
 ## Limitations
 
