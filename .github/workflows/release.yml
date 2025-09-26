@@ -12,27 +12,19 @@ jobs:
       contents: write
     
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
         with:
-          version: 10.15.1
-          run_install: false
-      
-      - name: Setup Node.js
+          version: 'latest'
+      - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: 22
           cache: 'pnpm'
-      
       - name: Install dependencies
-        run: pnpm install
-      
+        run: pnpm i
       - name: Build packages
         run: pnpm build
-      
       - name: Collect dist files
         run: |
           mkdir -p release-files
@@ -41,7 +33,6 @@ jobs:
             filename=$(basename "$file")
             cp "$file" "release-files/${package_name}-${filename}"
           done
-      
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
