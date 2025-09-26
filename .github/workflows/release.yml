@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v3
         with:
-          version: 'latest'
+          version: '10.15.1'
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
@@ -23,16 +23,44 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm i
+      - name: Debug workspace
+        run: |
+          echo "Current directory: $(pwd)"
+          echo "Workspace file:"
+          cat pnpm-workspace.yaml
+          echo "Available packages:"
+          ls -la packages/
+          echo "Package directories:"
+          find packages -name "package.json" -exec dirname {} \;
+          echo "PNPM version:"
+          pnpm --version
       - name: Build packages
         run: pnpm build
       - name: Collect dist files
         run: |
+          echo "Checking build outputs:"
+          find packages -name "dist" -type d || echo "No dist directories found"
+          find packages -name "*.user.js" -type f || echo "No .user.js files found"
+          
           mkdir -p release-files
-          find packages/*/dist -name "*.user.js" -type f | while read file; do
-            package_name=$(echo "$file" | cut -d'/' -f2)
-            filename=$(basename "$file")
-            cp "$file" "release-files/${filename}"
-          done
+          
+          # Check if any .user.js files exist
+          if find packages/*/dist -name "*.user.js" -type f 2>/dev/null | grep -q .; then
+            echo "Found .user.js files, collecting them:"
+            find packages/*/dist -name "*.user.js" -type f | while read file; do
+              package_name=$(echo "$file" | cut -d'/' -f2)
+              filename=$(basename "$file")
+              echo "Copying: $file -> release-files/${filename}"
+              cp "$file" "release-files/${filename}"
+            done
+          else
+            echo "No .user.js files found in packages/*/dist"
+            echo "Directory structure after build:"
+            find packages -type f -name "*.js" 2>/dev/null || echo "No .js files found anywhere"
+          fi
+          
+          echo "Files in release-files directory:"
+          ls -la release-files/ || echo "release-files directory is empty"
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
