@@ -1,14 +1,12 @@
 {
-  "name": "userjs",
-  "version": "1.1.0",
-  "description": "一些吾辈日常浏览网页需要用到便自行实现的 userjs 脚本",
-  "repository": "git@github.com:rxliuli/userjs.git",
-  "author": "rxliuli",
-  "license": "MIT",
+  "name": "userscripts",
+  "description": "A collection of user scripts for various purposes.",
+  "version": "0.0.0",
   "private": true,
+  "author": "https://rxliuli.com/",
+  "license": "MIT",
   "scripts": {
-    "clean-all": "pnpx rimraf **/node_modules **/dist **/release",
-    "build-all": "pnpm --filter ./apps run build",
+    "build": "pnpm -r build",
     "postinstall": "simple-git-hooks"
   },
   "workspaces": [
@@ -16,12 +14,10 @@
   ],
   "prettier": "@liuli-util/prettier-standard-config",
   "devDependencies": {
-    "@commitlint/cli": "^12.1.4",
-    "@liuli-util/commitlint-standard-config": "^0.1.6",
-    "@liuli-util/prettier-standard-config": "^0.1.0",
-    "lint-staged": "^11.2.6",
-    "prettier": "^2.8.8",
-    "simple-git-hooks": "^2.11.1"
+    "@liuli-util/prettier-standard-config": "^0.3.0",
+    "lint-staged": "^16.2.1",
+    "prettier": "^3.6.2",
+    "simple-git-hooks": "^2.13.1"
   },
   "sync": [
     "prettier",
@@ -29,18 +25,13 @@
     "simplehooks"
   ],
   "simple-git-hooks": {
-    "commit-msg": "npx commitlint --edit $1",
     "pre-commit": "npx lint-staged"
-  },
-  "commitlint": {
-    "extends": [
-      "@liuli-util/commitlint-standard-config"
-    ]
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,css,vue}": [
       "prettier --write",
       "git add"
     ]
-  }
+  },
+  "packageManager": "pnpm@10.15.1+sha512.34e538c329b5553014ca8e8f4535997f96180a1d0f614339357449935350d924e22f8614682191264ec33d1462ac21561aff97f6bb18065351c162c7e8f6de67"
 }

@@ -1,9 +1,0 @@
-{
-  "name": "usercss",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "devDependencies": {
-    "@liuli-util/cli": "^3.19.0"
-  }
-}

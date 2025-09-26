@@ -1,23 +1,12 @@
-# 日常需要用到便自行实现的油猴脚本
+# My UserScripts
 
-[![source-GitHub](https://img.shields.io/badge/source-GitHub-brightgreen.svg)](https://github.com/rxliuli/userjs) [![license-MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/rxliuli/userjs/blob/master/LICENSE)
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/rxliuli)
 
-## 模块列表
-
-- [解除网页限制](./apps/unblock-web-restrictions): 快速解除/恢复网页限制
-- [translation-selection](./apps/translation-selection): 将网页上选中的文字为英文，然后复制到剪切版便于粘贴
-- [goflac-download](./apps/goflac-download): 简化下载音乐需要重命名的麻烦，基本上和 91flac-download 差不多
-- [mdn-auto-chinese](./apps/mdn-auto-chinese): 如果检测到当前页面有中文翻译的话就跳转到中文翻译页面
-- [npmjs-copy-name-only](./apps/npmjs-copy-name-only): npm.js 仅复制名字，而不复制 `npm i` 前缀
-- [user.css](./apps/usercss): 一些 user.css 样式
-- [website](./website): 脚本的配置网站
-
-## 库
-
-- [liuli-util](https://github.com/rxliuli/liuli-util): 并非特意实现给 UserJS 使用，但里面基本上全是无依赖的小型 JS 的工具库，在脚本中通过 `yarn add @liuli-util/*` 安装使用
+- [Reddit Ctrl+Enter Sender](./packages//reddit-ctrl-enter-sender/README.md): A userscript to send Reddit comments with Ctrl+Enter.
+- [YouTube Music Background Play](./packages/youtube-music-background-play/README.md): A userscript to enable background play on YouTube Music.
 
 ## FAQ
 
-### 为什么没有发布到 GreasyFork 上？
+### Why not publish on GreasyFork?
 
-事实上，它们删了吾辈的用户脚本。由于它们要求所有的代码不能压缩，而第三方依赖（例如 react）默认会压缩，只能通过 `@require` 引入，但并非所有 npm 包都支持 iife（浏览器专用）的格式（一般支持 esm/cjs），懒得与其斗智斗勇所以放弃了。
+In fact, they removed my userscript. Since they require all code to be unminified, while third-party dependencies (like React) are minified by default and can only be included via `@require`, but not all npm packages support the iife (browser-specific) format (usually they support esm/cjs), I gave up because I didn't want to deal with these complications.
