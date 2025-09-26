@@ -15,6 +15,7 @@ export default defineConfig({
         grant: 'none',
         author: 'rxliuli',
         license: 'GPL-3.0-only',
+        version: (await import('../../package.json')).version,
       },
     }),
   ],

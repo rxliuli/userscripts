@@ -12,6 +12,7 @@ export default defineConfig({
         match: ['https://www.reddit.com/**'],
         author: 'rxliuli',
         license: 'GPL-3.0-only',
+        version: (await import('../../package.json')).version,
       },
     }),
   ],
