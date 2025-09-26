@@ -28,7 +28,7 @@ jobs:
       - name: Collect dist files
         run: |
           mkdir -p release-files
-          find packages/*/dist -name "*.js" -type f | while read file; do
+          find packages/*/dist -name "*.user.js" -type f | while read file; do
             package_name=$(echo "$file" | cut -d'/' -f2)
             filename=$(basename "$file")
             cp "$file" "release-files/${filename}"
