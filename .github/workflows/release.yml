@@ -31,7 +31,7 @@ jobs:
           find packages/*/dist -name "*.js" -type f | while read file; do
             package_name=$(echo "$file" | cut -d'/' -f2)
             filename=$(basename "$file")
-            cp "$file" "release-files/${package_name}-${filename}"
+            cp "$file" "release-files/${filename}"
           done
       - name: Create Release
         uses: softprops/action-gh-release@v2
