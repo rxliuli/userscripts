@@ -1,6 +1,6 @@
 {
-  "name": "youtube-music-background-play",
-  "description": "Keep YouTube Music playing in background",
+  "name": "hztsg-wifi",
+  "description": "Automatically log in to the Hangzhou Library Wifi.",
   "private": true,
   "version": "0.1.1",
   "type": "module",
@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.15.30",
+    "@types/tampermonkey": "^5.0.4",
     "@vitest/browser": "^3.2.2",
     "playwright": "^1.52.0",
     "typescript": "^5.8.3",
@@ -20,9 +21,5 @@
     "vitest": "^3.2.2",
     "vitest-browser-react": "^0.2.0",
     "zx": "^8.5.5"
-  },
-  "dependencies": {
-    "@medv/finder": "^4.0.2",
-    "@rxliuli/vista": "^0.4.0"
   }
 }

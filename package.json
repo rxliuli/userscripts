@@ -19,11 +19,6 @@
     "prettier": "^3.6.2",
     "simple-git-hooks": "^2.13.1"
   },
-  "sync": [
-    "prettier",
-    "commitlint",
-    "simplehooks"
-  ],
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
   },
