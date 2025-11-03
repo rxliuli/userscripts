@@ -2,8 +2,9 @@
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/rxliuli)
 
-- [Reddit Ctrl+Enter Sender](./packages//reddit-ctrl-enter-sender/README.md): A userscript to send Reddit comments with Ctrl+Enter.
-- [YouTube Music Background Play](./packages/youtube-music-background-play/README.md): A userscript to enable background play on YouTube Music.
+- [Reddit Ctrl+Enter Sender](./packages//reddit-ctrl-enter-sender/README.md): Send Reddit comments with Ctrl+Enter.
+- [YouTube Music Background Play](./packages/youtube-music-background-play/README.md): Enable background play on YouTube Music.
+- [TVTropes Anti-Adblock Bypass](./packages/tvtropes-anti-adblock-bypass/README.md): Bypass anti-adblock detection on TVTropes.org.
 
 ## FAQ
 
