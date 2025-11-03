@@ -5,6 +5,7 @@
 # vscode
 .vscode/
 .history/
+.claude/
 
 # npm
 node_modules/
