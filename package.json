@@ -1,7 +1,7 @@
 {
   "name": "userscripts",
   "description": "A collection of user scripts for various purposes.",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "private": true,
   "author": "https://rxliuli.com/",
   "license": "GPL-3.0-only",

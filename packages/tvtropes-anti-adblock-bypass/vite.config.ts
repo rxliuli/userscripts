@@ -12,7 +12,7 @@ export default defineConfig({
         match: ['https://tvtropes.org/**'],
         author: 'rxliuli',
         license: 'GPL-3.0-only',
-        version: (await import('./package.json')).version,
+        version: (await import('../../package.json')).version,
         'run-at': 'document-start',
       },
     }),
