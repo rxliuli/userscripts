@@ -2,42 +2,50 @@ name: Release
 
 on:
   push:
-    tags:
-      - 'v*.*.*'
+    branches: [master]
+    paths:
+      - 'package.json'
 
 jobs:
+  version:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.version.outputs.changed }}
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Check version change
+        id: version
+        uses: rxliuli/version-check@v1
+        with:
+          file: package.json
+
   release:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
+    needs: version
+    if: needs.version.outputs.changed == 'true'
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v3
         with:
-          version: '10.15.1'
-      - name: Use Node.js
-        uses: actions/setup-node@v4
+          version: 'latest'
+      - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: 'pnpm'
       - name: Install dependencies
-        run: pnpm i
+        run: pnpm install
       - name: Build packages
         run: pnpm build
-      - name: Collect dist files
-        run: |
-          mkdir -p release-files
-          find packages/*/dist -name "*.user.js" -type f | while read file; do
-            filename=$(basename "$file")
-            cp "$file" "release-files/${filename}"
-          done
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          files: release-files/*
-          generate_release_notes: true
+          tag_name: 'v${{ needs.version.outputs.version }}'
+          name: 'v${{ needs.version.outputs.version }}'
           draft: false
           prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          files: dist/*.user.js

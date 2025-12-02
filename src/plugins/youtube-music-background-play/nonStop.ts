@@ -1,5 +1,6 @@
-import { Vista, interceptEvent } from '@rxliuli/vista'
+import { Vista } from '@rxliuli/vista'
 import { finder } from '@medv/finder'
+import { interceptEvent } from './event'
 
 export function nonStop() {
   Object.defineProperty(document, 'hidden', {

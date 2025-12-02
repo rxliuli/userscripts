@@ -1,4 +1,4 @@
-import { hijackScript } from './lib/hijackScript'
+import { hijackScript } from './hijackScript'
 
 hijackScript((node) => {
   let text = node.textContent
