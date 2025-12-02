@@ -22,6 +22,7 @@
     "@types/tampermonkey": "^5.0.4",
     "@vitest/browser": "^3.2.2",
     "bundle-require": "^5.1.0",
+    "chokidar": "^5.0.0",
     "lint-staged": "^16.2.1",
     "playwright": "^1.52.0",
     "prettier": "^3.6.2",
