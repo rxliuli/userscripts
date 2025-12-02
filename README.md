@@ -2,9 +2,10 @@
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/rxliuli)
 
-- [Reddit Ctrl+Enter Sender](./packages//reddit-ctrl-enter-sender/README.md): Send Reddit comments with Ctrl+Enter.
-- [YouTube Music Background Play](./packages/youtube-music-background-play/README.md): Enable background play on YouTube Music.
-- [TVTropes Anti-Adblock Bypass](./packages/tvtropes-anti-adblock-bypass/README.md): Bypass anti-adblock detection on TVTropes.org.
+- [Reddit Ctrl+Enter Sender](./src/plugins/reddit-ctrl-enter-sender/README.md): Send Reddit comments with Ctrl+Enter.
+- [Reddit Search Options Persist](./src/plugins/reddit-search-options-persist/README.md): Keep Reddit search filters when searching with new keywords.
+- [YouTube Music Background Play](./src/plugins/youtube-music-background-play/README.md): Enable background play on YouTube Music.
+- [TVTropes Anti-Adblock Bypass](./src/plugins/tvtropes-anti-adblock-bypass/README.md): Bypass anti-adblock detection on TVTropes.org.
 
 ## FAQ
 
