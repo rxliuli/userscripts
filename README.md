@@ -1,5 +1,6 @@
 # My UserScripts
 
+- [Duolingo Hide App Popups](./src/plugins/duolingo-hide-popups/README.md): Hide annoying app download popups and restore scrolling on Duolingo.
 - [Reddit Ctrl+Enter Sender](./src/plugins/reddit-ctrl-enter-sender/README.md): Send Reddit comments with Ctrl+Enter.
 - [Reddit Search Options Persist](./src/plugins/reddit-search-options-persist/README.md): Keep Reddit search filters when searching with new keywords.
 - [YouTube Music Background Play](./src/plugins/youtube-music-background-play/README.md): Enable background play on YouTube Music.
