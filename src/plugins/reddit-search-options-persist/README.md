@@ -25,3 +25,7 @@ Reddit resets all search options every time you enter a new search term. This us
 2. **Perform a Search**: Use the search bar with your preferred filters (sort, time, type)
 3. **Search Again**: Enter a new search term and press Enter
 4. **Filters Preserved**: Your previous filter settings are automatically applied to the new search
+
+## Discord
+
+Join the discussion: <https://discord.gg/Cwre8EwkNX>

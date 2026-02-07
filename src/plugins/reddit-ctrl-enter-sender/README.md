@@ -21,3 +21,7 @@ A userscript that enables quick submission of replies, comments, or edits on Red
 2. **Start Typing**: Enter your content in a comment box, reply field, or edit area
 3. **Use the Shortcut**: Press Ctrl+Enter (Windows/Linux) or Cmd+Enter (Mac)
 4. **Auto Submit**: The script automatically finds and clicks the appropriate submit/save button
+
+## Discord
+
+Join the discussion: <https://discord.gg/Cwre8EwkNX>
