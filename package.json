@@ -40,6 +40,7 @@
   "dependencies": {
     "@medv/finder": "^4.0.2",
     "@rxliuli/vista": "^0.4.5",
+    "css-what": "^7.0.0",
     "es-toolkit": "^1.41.0",
     "query-selector-shadow-dom": "^1.0.1"
   },

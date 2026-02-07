@@ -1,11 +1,11 @@
 import { debounce } from 'es-toolkit'
-import { querySelectorDeep } from 'query-selector-shadow-dom'
-import { observeElement } from './observeElement'
+import { observe, querySelector } from './filters'
 
-observeElement({
-  selector: '.input-container > input[name="q"]',
-  onElement: debounce((element) => {
-    const searchInput = element as HTMLInputElement
+observe(
+  document.body,
+  '.input-container > input[name="q"]',
+  debounce((elements) => {
+    const searchInput = elements[0] as HTMLInputElement
     console.debug('interceptSearch', searchInput)
 
     searchInput.addEventListener(
@@ -24,17 +24,18 @@ observeElement({
           performSearch(query)
         }
       },
-      true,
+      {
+        capture: true,
+      },
     )
   }, 100),
-  supportShadowDOM: true,
-  root: document.body,
-})
+)
 
 let controller = new AbortController()
-observeElement({
-  selector: 'a[type="button"][href*="/search/"]',
-  onElement: debounce(() => {
+observe(
+  document.body,
+  'a[type="button"][href*="/search/"]',
+  debounce(() => {
     controller.abort()
     controller = new AbortController()
     document.querySelectorAll('a[type="button"][href*="/search/"]').forEach((anchor) => {
@@ -60,19 +61,17 @@ observeElement({
       )
     })
   }, 100),
-  supportShadowDOM: true,
-  root: document.body,
-})
+)
 
 function performSearch(query: string) {
   let baseURL = '/search'
-  if (querySelectorDeep('faceplate-search-input #search-input-chip')) {
+  if (querySelector(document.body, '#search-input-chip')) {
     const subredditMatch = location.pathname.match(/^\/r\/([^\/]+)/)
     if (subredditMatch) {
       baseURL = `/r/${subredditMatch[1]}/search`
     }
   }
-  const filter = querySelectorDeep('#search-input-remove-filter')
+  const filter = querySelector(document.body, '#search-input-remove-filter') as HTMLDivElement | null
   if (filter && filter.innerText.trim().startsWith('u/')) {
     const username = filter.innerText.trim().slice(2)
     if (username) {
