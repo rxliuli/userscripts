@@ -17,7 +17,3 @@ When triggered via the userscript menu, it automatically selects all "NO", "NONE
 2. Open the age ratings dialog
 3. Click the userscript menu and select "Auto-select NO/NONE (Age Ratings)"
 4. The script will automatically select all NO/NONE options and advance through each step
-
-## Discord
-
-Join the discussion: <https://discord.gg/C2baQRZUCW>
