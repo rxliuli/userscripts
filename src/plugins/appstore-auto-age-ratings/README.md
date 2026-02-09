@@ -11,6 +11,10 @@ When triggered via the userscript menu, it automatically selects all "NO", "NONE
 1. Install a userscript manager like [Tampermonkey](https://www.tampermonkey.net/) or [Greasemonkey](https://www.greasespot.net/)
 2. Download the userscript from <https://github.com/rxliuli/userscripts/releases/latest/download/appstore-auto-age-ratings.user.js>
 
+## Demo
+
+[![Demo Video](https://img.youtube.com/vi/pxEJTJb_xFU/maxresdefault.jpg)](https://www.youtube.com/watch?v=pxEJTJb_xFU)
+
 ## Usage
 
 1. Navigate to your app's distribution info page in App Store Connect
