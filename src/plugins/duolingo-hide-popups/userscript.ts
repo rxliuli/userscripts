@@ -1,4 +1,4 @@
-import { observeElement } from '../reddit-search-options-persist/observeElement'
+import { observeElement } from './observeElement'
 
 // Hide Duolingo popups that promote their app
 function injectStyles() {

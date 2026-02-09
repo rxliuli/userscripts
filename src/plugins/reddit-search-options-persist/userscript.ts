@@ -65,18 +65,27 @@ observe(
 
 function performSearch(query: string) {
   let baseURL = '/search'
-  if (querySelector(document.body, '#search-input-chip')) {
-    const subredditMatch = location.pathname.match(/^\/r\/([^\/]+)/)
+  const searchInput = querySelector(document.body, 'faceplate-search-input') as HTMLElement | null
+  // {"action_info":{"type":"input-community"}}
+  const trackingContext = JSON.parse(searchInput?.getAttribute('data-faceplate-tracking-context') || '{}') as {
+    action_info?: {
+      type?: 'input-community' | 'input-global' | 'input-profile'
+    }
+  }
+  if (trackingContext.action_info?.type === 'input-community') {
+    // when /r/{subreddit}/search
+    const subredditMatch = location.pathname.match(/\/r\/([^\/]+)/)
     if (subredditMatch) {
       baseURL = `/r/${subredditMatch[1]}/search`
     }
-  }
-  const filter = querySelector(document.body, '#search-input-remove-filter') as HTMLDivElement | null
-  if (filter && filter.innerText.trim().startsWith('u/')) {
-    const username = filter.innerText.trim().slice(2)
-    if (username) {
-      baseURL = `/user/${username}/search`
+  } else if (trackingContext.action_info?.type === 'input-profile') {
+    // when /user/{username}/search
+    const userMatch = location.pathname.match(/\/user\/([^\/]+)/)
+    if (userMatch) {
+      baseURL = `/user/${userMatch[1]}/search`
     }
+  } else if (trackingContext.action_info?.type === 'input-global') {
+    // when /search
   }
 
   const params = new URLSearchParams(location.search)
