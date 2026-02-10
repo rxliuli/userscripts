@@ -1,12 +1,14 @@
 import { parse } from 'css-what'
-import { matches } from './matches'
+import { matches, validateSelector } from './matches'
 
 export function querySelectorAll(root: Element, selector: string): Element[] {
   const ast = parse(selector)
+  validateSelector(ast)
   const results: Element[] = []
   for (const el of walkDOM(root)) {
-    if (matches(el, ast)) {
-      results.push(el)
+    const matched = matches(el, ast)
+    if (matched) {
+      results.push(matched)
     }
   }
   return results
@@ -14,9 +16,11 @@ export function querySelectorAll(root: Element, selector: string): Element[] {
 
 export function querySelector(root: Element, selector: string): Element | null {
   const ast = parse(selector)
+  validateSelector(ast)
   for (const el of walkDOM(root)) {
-    if (matches(el, ast)) {
-      return el
+    const matched = matches(el, ast)
+    if (matched) {
+      return matched
     }
   }
   return null
