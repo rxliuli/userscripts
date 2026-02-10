@@ -1,5 +1,5 @@
 import { debounce } from 'es-toolkit'
-import { observe, querySelector } from './filters'
+import { observe, querySelector } from '../../lib/filters'
 
 observe(
   document.body,
