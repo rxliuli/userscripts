@@ -6,6 +6,8 @@ A userscript that prevents YouTube Music from pausing playback when running in b
 
 This userscript intercepts browser APIs that YouTube uses to detect if you're actively watching, allowing music to continue playing when you switch to other tabs.
 
+<img width="590" height="1280" alt="image" src="https://github.com/user-attachments/assets/c2bf18d7-fbdc-486f-9b68-5f0e3e966b3d" />
+
 ## Installation
 
 1. Install a userscript manager like [Tampermonkey](https://www.tampermonkey.net/) or [Greasemonkey](https://www.greasespot.net/)
