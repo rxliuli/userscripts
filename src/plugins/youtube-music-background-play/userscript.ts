@@ -67,11 +67,22 @@ export function nonStop() {
   }
 
   // console.log('[Youtube Music] Setting up observer for video element')
-  observe(document.documentElement, 'video', {
-    onMatch([video]) {
-      if (video instanceof HTMLVideoElement) {
-        watchMediaElement(video)
-      }
+  observe(
+    document.documentElement,
+    'video,ytmusic-you-there-renderer:not([aria-hidden="true"]) button[aria-label="Yes"]',
+    {
+      onMatch([element]) {
+        if (element instanceof HTMLVideoElement) {
+          watchMediaElement(element)
+        }
+        if (element instanceof HTMLButtonElement) {
+          console.log('Auto-closing "Are you there?" dialog via observer')
+          setTimeout(() => {
+            element.click()
+            console.log('Clicked "Yes" button')
+          }, 100)
+        }
+      },
     },
-  })
+  )
 }
