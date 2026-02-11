@@ -14,7 +14,7 @@ This userscript intercepts browser APIs that YouTube uses to detect if you're ac
 
 - ✅ Chrome/Edge/Firefox - Full support
 - ✅ macOS Safari - Full support (requires Tampermonkey or Userscripts extension)
-- ✅ iOS Safari - Full support (requires Userscripts extension)
+- ✅ iOS Safari - Full support (requires Tampermonkey extension)
 
 ## Installation
 
