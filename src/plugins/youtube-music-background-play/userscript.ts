@@ -1,6 +1,6 @@
 import { observe } from '../../lib/filters'
 
-export function nonStop() {
+function nonStop() {
   Object.defineProperty(document, 'hidden', {
     get: () => false,
     configurable: true,
@@ -86,3 +86,5 @@ export function nonStop() {
     },
   )
 }
+
+nonStop()
