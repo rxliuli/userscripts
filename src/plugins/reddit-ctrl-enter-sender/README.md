@@ -24,4 +24,4 @@ A userscript that enables quick submission of replies, comments, or edits on Red
 
 ## Discord
 
-Join the discussion: <https://discord.gg/Cwre8EwkNX>
+Join the discussion: <https://discord.gg/gFhKUthc88>

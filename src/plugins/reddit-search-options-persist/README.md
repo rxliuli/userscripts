@@ -28,4 +28,4 @@ Reddit resets all search options every time you enter a new search term. This us
 
 ## Discord
 
-Join the discussion: <https://discord.gg/Cwre8EwkNX>
+Join the discussion: <https://discord.gg/gFhKUthc88>

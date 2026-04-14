@@ -46,4 +46,4 @@ This userscript is for personal use. Use at your own risk.
 
 ## Discord
 
-Join the discussion: <https://discord.gg/C2baQRZUCW>
+Join the discussion: <https://discord.gg/gFhKUthc88>
